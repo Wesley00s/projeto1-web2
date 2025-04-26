@@ -1,10 +1,85 @@
 
 .banner {
-  padding: 30px;
+  width: 100%;
   display: flex;
-  background-color: #5A049C;
- // background-image: url("/assets/images/background.png");
+  background-color: var(--primary-color);
   background-size: cover;
-  background-position: center;
-  height: 600px;
+  background-position: start;
+  height: 700px;
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+    &__first-column {
+      flex-direction: column;
+      margin-top: 200px;
+      padding-left: 10%;
+      max-width: 50%;
+      max-height: 60%;
+
+      &__title {
+        padding-left: 20%;
+        color: var(--text-color);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        font-size: 45px;
+      }
+
+      &__text {
+        padding-left: 20%;
+        margin-top: 20px;
+        color: var(--text-color);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: medium;
+        font-size: 28px;
+      }
+
+      &__moon {
+        margin-top: 165px;
+      }
+    }
+
+    &__second-column {
+      margin-top: 50px;
+      padding-left: 5.4%;
+
+      &__image {
+        height: 120px;
+        width: 350px;
+      }
+    }
+  }
+}
+
+.title-courses {
+  margin-top: 30px;
+  text-align: center;
+  color: var(--primary-color);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.courses {
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+
+  &__card-courses {
+    margin-top: 10px;
+    gap: 20px;
+    justify-content: center;
+    padding: 0 30px;
+  }
+}
+
+/*Margem para teste do footer*/
+
+.margin {
+  margin-top: 100px;
 }
