@@ -26,6 +26,17 @@
     </div>
 </div> 
 
+<div class="title-categories">
+  Categorias de cursos
+</div>
+
+<div class="categories">
+  
+  <div class="categories__show" *ngFor="let category of categories">
+      <app-category [category]="category"></app-category>
+  </div>
+</div>
+
 <div class="title-courses">
     Nossos cursos
 </div>
@@ -35,6 +46,18 @@
     <div class="courses__card-courses" *ngFor="let course of courses">
         <app-card-course [course]="course"></app-card-course>
     </div>
+</div>
+
+
+<div class="title-students">
+  O que dizem nossos alunos?
+</div>
+
+<div class="comments">
+  
+  <div class="comments__show" *ngFor="let comment of comments">
+      <app-comment [comment]="comment"></app-comment>
+  </div>
 </div>
 
 <div class="margin">
