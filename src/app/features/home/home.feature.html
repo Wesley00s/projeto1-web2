@@ -1,0 +1,68 @@
+<navbar></navbar>
+
+<div class="banner">
+    <div class="banner__row">
+      <div class="banner__row__first-column">
+        <div class="banner__row__first-column__title">
+          Transformando jovens
+          talentos em protagonistas 
+          do futuro digital.
+        </div>
+        <div class="banner__row__first-column__text">
+          Disseminamos cursos gratuitos de 
+          tecnologia a jovens estudantes
+          de escolas públicas. 
+        </div>
+        <div class="banner__row__first-column__moon">
+            <img src="assets/images/lua.png" alt="Lua">
+        </div>
+      </div>
+  
+      <div class="banner__row__second-column">
+        <div class="banner__row__second-column__image">
+            <img src="assets/images/mulher.png" alt="Fundo">
+        </div>
+      </div>
+    </div>
+</div> 
+
+<div class="title-categories">
+  Categorias de cursos
+</div>
+
+<div class="categories">
+  
+  <div class="categories__show" *ngFor="let category of categories">
+      <app-category [category]="category"></app-category>
+  </div>
+</div>
+
+<div class="title-courses">
+    Nossos cursos
+</div>
+
+<div class="courses">
+    
+    <div class="courses__card-courses" *ngFor="let course of courses">
+        <app-card-course [course]="course"></app-card-course>
+    </div>
+</div>
+
+
+<div class="title-students">
+  O que dizem nossos alunos?
+</div>
+
+<div class="comments">
+  
+  <div class="comments__show" *ngFor="let comment of comments">
+      <app-comment [comment]="comment"></app-comment>
+  </div>
+</div>
+
+<div class="margin">
+
+</div>
+
+<app-footer></app-footer>
+

@@ -1,0 +1,36 @@
+<div class="card-course">
+    <div class="card-course__image">
+      <img [src]="course.imageUrl" alt="Imagem do curso" />
+    </div>
+  
+    <div class="card-course__details">
+      <span class="card-course__details__title">
+        {{ course.title }}
+      </span>
+  
+      <div class="card-course__details__column">
+
+        <div class="card-course__details__column__first-row">
+            <h3 class="card-course__details__column__first-row__duration">
+                {{ course.duration }} horas
+            </h3>
+        
+            <h3 class="card-course__details__column__first-row__availability">
+                {{ course.availability }}
+            </h3>
+        </div>
+    
+        <div class="card-course__details__column__second-row">
+
+            <h3 class="card-course__details__column__second-row__rating">
+                ⭐ {{ course.rating }} 
+            </h3>
+        
+            <h3 class="card-course__details__column__second-row__price">
+                {{ course.price ? 'Grátis' : 'Pago' }}
+            </h3>
+            </div>
+        </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,78 @@
+.comment {
+    max-width: 400px;
+    height: 100%;
+    margin-top: 30px;
+    max-height: 500px;
+    margin-left: 40px;
+    min-width: 100px;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--color-aux);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+
+    &__details {
+        padding: 5px;
+        border-radius: 15px;
+
+        &__identity {
+            display: flex;
+            flex-direction: row;
+            padding: 10px;
+            
+            &__image {
+                position: relative;
+                
+        
+                img {
+                    width: 100px;
+                    border-radius: 50px;
+                    object-fit: cover;
+                }
+            } 
+
+            &__column {
+                margin: 20px;
+                margin-top: 0px;
+                display: flex;
+                flex-direction: column;
+        
+                &__name {
+                    margin-top: 20px;
+                    font-size: 20px;
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    font-weight: bold;
+                    color: var(--primary-color);
+                } 
+            }
+        }
+  
+        &__more {
+
+            &__comment {
+                text-align: center;  
+                font-size: 16px;
+                font-weight: medium;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color: var(--card-text-primary-color);
+                word-wrap: break-word;  
+                word-break: break-word;  
+                white-space: normal; 
+            }
+
+            &__course {
+                padding-left: 20%;
+                margin-top: 30px;
+                font-size: 16px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-weight: medium;
+                color: var(--card-text-secondary-color);
+            }
+        }
+
+        &__title:hover {
+            color: var(--primary-color);
+        }
+    }
+}

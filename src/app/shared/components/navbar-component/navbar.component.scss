@@ -1,0 +1,119 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 1.0rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  
+    &__logo {
+      padding-left: 12%;
+      display: flex;
+      align-items: center;
+      flex-grow: 0;
+  
+      img {
+        height: 50px;
+        margin-right: 20px;
+      }
+    }
+    &__title {
+        font-size: 32px;
+        font-weight: bold;
+        color: var(--primary-color);
+      }
+    ul {
+        padding-left: 60%;
+    }
+  
+    &__links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      flex-grow: 1;
+  
+      li {
+        display: flex;
+        align-items: center;
+      }
+  
+      li a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: color 0.3s;
+        text-align: center;
+        padding: 6px 10px;
+        cursor: pointer;
+  
+        &:hover,
+        &.active {
+          color: var(--text-color);
+        }
+      }
+    }
+  
+    &__button {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 130px;
+      height: 40px;
+      background-color: var(--primary-color);
+      color: var(--text-color) !important;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.3s, color 0.3s;
+      cursor: pointer;
+      text-transform: uppercase;
+      text-align: center;
+      white-space: nowrap;
+  
+      &:hover {
+        background-color: var(--button-secondary-color);
+        color: var(--text-color);
+      }
+    } 
+
+    @media (max-width: 1024px) {
+      &__links {
+        gap: 15px;
+      }
+  
+      li a {
+        font-size: 0.9rem;
+      }
+  
+      &__button {
+        padding: 6px 14px;
+        font-size: 0.9rem;
+        width: auto;
+      }
+    }
+  
+    @media (max-width: 768px) {
+      flex-direction: row;
+      align-items: start;
+  
+      &__logo {
+        margin-bottom: 4px;
+      }
+  
+      &__links {
+        flex-direction: row;
+        gap: 1px;
+      }
+  
+      &__button {
+        width: auto;
+        text-align: center;
+        margin-left: 0;
+      }
+    }
+  }

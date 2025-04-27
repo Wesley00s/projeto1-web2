@@ -1,0 +1,29 @@
+<div class="comment">   
+    <div class="comment__details">
+        <div class="comment__details__identity">
+            <div class="comment__details__identity__image">
+                <img [src]="comment.imageUrl" alt="Imagem da categoria" />
+            </div>
+
+            <div class="comment__details__identity__column">
+
+                <span class="comment__details__identity__column__name">
+                    {{ comment.name }}
+                </span> 
+                <div class="comment__details__identity__column__rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+            </div>
+      </div>
+     
+      <div class="comment__details__more">
+        <div class="comment__details__more__comment">
+            {{ comment.description }}
+        </div>
+        <div class="comment__details__more__course">
+            {{ comment.nameCourse }}
+        </div>
+      </div>
+    </div>
+</div>
+  

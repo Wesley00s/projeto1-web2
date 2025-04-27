@@ -1,0 +1,34 @@
+import { Injectable } from "@angular/core";
+import { Category } from "../model/category.model"
+
+@Injectable({
+    providedIn: 'root',  
+  })
+export class CategoryService {
+    private categories = [
+        {
+            idCategory : 0,
+            title : "Programação web e desktop",
+            imageUrl : "assets/images/programacao.png"
+        },
+        {
+            idCategory : 1,
+            title : "Computação em nuvem",
+            imageUrl : "assets/images/nuvem.png"
+        },
+        {
+            idCategory : 2,
+            title : "Inteligência de negócios",
+            imageUrl : "assets/images/negocios.png"
+        },
+        {
+            idCategory : 3,
+            title : "Programação de jogos",
+            imageUrl : "assets/images/jogos.png"
+        }
+    ]
+
+    getCategories() : Category[] {
+        return this.categories;
+    }
+}

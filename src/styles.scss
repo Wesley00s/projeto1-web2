@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #5A049C;
+    --secondary-color: #FFFFFF;
+    --text-color: #FFF;
+    --color-aux: #9c9b9b;
+    --button-secondary-color: #bc7aef;
+    --footer-final-color: #3A0B5D;
+    --card-text-primary-color: #000;
+    --card-text-secondary-color: #959595;
+  }
+  
