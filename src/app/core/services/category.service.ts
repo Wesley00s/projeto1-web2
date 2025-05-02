@@ -13,7 +13,7 @@ export class CategoryService {
         },
         {
             idCategory : 1,
-            title : "Computação em nuvem",
+            title : "Computação em nuvem e DevOps",
             imageUrl : "assets/images/nuvem.png"
         },
         {
@@ -27,6 +27,14 @@ export class CategoryService {
             imageUrl : "assets/images/jogos.png"
         }
     ]
+
+    getCategoryById(idCategory : number): Category {
+        const found = this.categories.find(category => category.idCategory === idCategory);
+        if (!found) {
+          throw new Error(`Categoria com ID ${idCategory} não encontrada`);
+        }
+        return found;
+    }
 
     getCategories() : Category[] {
         return this.categories;

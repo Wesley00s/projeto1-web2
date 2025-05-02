@@ -10,7 +10,6 @@ import { CourseService } from '../../core/services/course.service';
 import { CategoryService } from '../../core/services/category.service';
 import { CommentService } from '../../core/services/comment.service';
 
-
 @Component({
   selector: 'home',
   standalone: true,
@@ -30,7 +29,7 @@ export class HomeFeature {
 
   ngOnInit() {
     this.categories = this.categoryService.getCategories();
-    this.courses = this.courseService.getCourses();
+    this.courses = this.courseService.getCoursesByShowRecommended();
     this.comments = this.commentService.getComments()
   }
     
