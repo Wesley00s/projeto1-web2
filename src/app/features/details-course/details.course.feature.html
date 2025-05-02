@@ -1,0 +1,53 @@
+<navbar></navbar>
+
+<div class="course" *ngIf="course">
+  <div class="course__image">
+    <img [src]="course.imageUrl" alt="Imagem do curso" />
+  </div>
+
+  <div class="course__details">
+    <div class="course__details__local">
+    <span class="course__details__local__title">
+      {{ course.title }}
+    </span>
+    </div>
+
+    <div class="course__details__column">
+      <div class="course__details__column__first-row">
+        <h3 class="course__details__column__first-row__duration">
+          {{ course.duration }} horas
+        </h3>
+
+        <h3 class="course__details__column__first-row__availability">
+          {{ course.availability }}
+        </h3>
+      </div>
+
+      <div class="course__details__description">
+        <p>
+          {{ course.description }}
+        </p>
+      </div>
+
+      <div class="course__details__column__second-row">
+        <h3 class="course__details__column__second-row__rating">
+          ⭐ {{ course.rating }} 
+        </h3>
+
+        <h3 class="course__details__column__second-row__price">
+          {{ course.price ? 'Grátis' : 'Pago' }}
+        </h3>
+      </div>
+    </div>
+    <div class="course__study">
+      <a routerLink="/fazer" routerLinkActive="active" class="course__study__button">Estudar
+          <img src="assets/images/seta.png" alt="Seta" class="course__study__arrow">
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="margin">
+</div>
+
+<app-footer></app-footer>

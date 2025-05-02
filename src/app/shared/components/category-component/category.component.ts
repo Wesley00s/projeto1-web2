@@ -1,14 +1,23 @@
-import { Component, Input } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
+import { Category } from '../../../core/model/category.model';
 
 @Component({
   selector: 'app-category',
   standalone: true,
-  imports: [RouterModule],
+  imports: [],
   templateUrl: 'category.component.html',
   styleUrl: 'category.component.scss'
 })
 export class CategoryComponent  {
-  constructor() {}
-  @Input() category!: any;
+  constructor(private router : Router) {}
+  @Input() category!: Category;
+  @Input() idCategory!: number;
+  @Output() categoryClicked = new EventEmitter<number>()
+
+  navigateToListCourses(idCategory : number) {
+    this.router.navigate(['/list-courses', idCategory])
+  }
 }
+
+
