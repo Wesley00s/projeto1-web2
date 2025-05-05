@@ -19,6 +19,7 @@
         &__first-column {
             flex-direction: column;
             max-width: 33%;
+            display: flex;
 
             &__edutech {
                 display: flex;
@@ -73,6 +74,7 @@
             flex-direction: column;
             max-width: 33%;
             padding-right: 15%;
+            display: flex;
 
             &__title {
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -107,6 +109,7 @@
             flex-direction: column;
             max-width: 33%;
             padding-right: 5%;
+            display: flex;
 
             &__title {
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -168,6 +171,11 @@
 }
 
 @media (max-width: 767px) {
+    .footer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      
     .footer__row {
         flex-direction: column; 
         justify-content: center;

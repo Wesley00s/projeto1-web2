@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
 .banner {
   width: 100%;
@@ -14,47 +19,48 @@
 
     &__first-column {
       flex-direction: column;
-      margin-top: 200px;
-      padding-left: 10%;
-      max-width: 50%;
+      margin-top: 180px;
+      margin-left: 1.5%;
+      max-width: 45%;
       max-height: 60%;
 
       &__title {
-        padding-left: 20%;
+        padding-left: 10%;
         color: var(--text-color);
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-weight: bold;
-        font-size: 45px;
+        font-size: 44px;
       }
 
-      &__text {
-        padding-left: 20%;
+      &__text { 
+        padding-left: 10%;
         margin-top: 20px;
         color: var(--text-color);
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-weight: medium;
-        font-size: 28px;
+        font-size: 27px;
       }
 
+      //Meio eclipse inferior
       &__moon {
-        margin-top: 165px;
+        margin-top: 125px;
       }
     }
 
     &__second-column {
       margin-top: 50px;
-      padding-left: 5.4%;
+      margin-left: 4.7%;
 
       &__image {
-        height: 120px;
-        width: 350px;
+        height: 100px;
+        width: 300px; 
       }
     }
   }
 }
 
 .title-categories {
-  margin-top: 30px;
+  margin-top: 50px;
   text-align: center;
   color: var(--primary-color);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -105,7 +111,7 @@
 
 
 .title-students {
-  margin-top: 40px;
+  margin-top: 60px;
   text-align: center;
   color: var(--primary-color);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -121,12 +127,12 @@
   display: flex;
   flex-direction: row;
 
-  &__card-courses {
-    margin-top: 10px;
-    gap: 20px;
-    justify-content: center;
-    padding: 0 30px;
-  }
+    &__card-courses {
+      margin-top: 10px;
+      gap: 20px;
+      justify-content: center;
+      padding: 0 30px;
+    }
 }
 
 
@@ -134,4 +140,101 @@
 
 .margin {
   margin-top: 100px;
+}
+
+
+@media (max-width: 1024px) {
+  .banner__row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .banner__row__first-column {
+    margin-top: 80px;
+    margin-left: 0;
+    max-width: 90%;
+    align-items: center;
+
+    &__title,
+    &__text {
+      padding-left: 0;
+    }
+
+    &__title {
+      font-size: 36px;
+    }
+
+    &__text {
+      font-size: 22px;
+    }
+
+    &__moon {
+      margin-top: 50px;
+
+      img {
+        width: 80px;
+        height: auto;
+      }
+    }
+  }
+
+  .banner__row__second-column {
+    margin-top: 30px;
+    margin-left: 0;
+
+    &__image {
+      width: 240px;
+      height: auto;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .categories,
+  .courses,
+  .comments {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .categories__show,
+  .courses__card-courses,
+  .comments__card-courses {
+    flex: 1 1 300px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner {
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  .banner__row__first-column__title {
+    font-size: 28px;
+  }
+
+  .banner__row__first-column__text {
+    font-size: 18px;
+  }
+
+  .title-categories,
+  .title-courses,
+  .title-students {
+    font-size: 24px;
+  }
+
+  .categories__show,
+  .courses__card-courses,
+  .comments__card-courses {
+    flex: 1 1 100%;
+    padding: 0 10px;
+  }
 }

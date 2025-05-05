@@ -9,9 +9,10 @@
     border: 1px solid var(--color-aux);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.234);
     font-family: Arial, sans-serif;
-
+    padding: 20px;
+    
     &__details {
         padding: 5px;
         border-radius: 15px;
@@ -24,11 +25,11 @@
             &__image {
                 position: relative;
                 
-        
                 img {
                     width: 100px;
                     border-radius: 50px;
                     object-fit: cover;
+                    border: 3px solid var(--primary-color);
                 }
             } 
 
@@ -51,7 +52,7 @@
         &__more {
 
             &__comment {
-                text-align: center;  
+                text-align: justify;  
                 font-size: 16px;
                 font-weight: medium;
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
