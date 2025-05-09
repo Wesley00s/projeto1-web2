@@ -10,7 +10,11 @@
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family-primary);
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
   
     &__image {
       position: relative;
@@ -48,14 +52,14 @@
                 &__duration {
                     font-size: 16px;
                     font-weight: medium;
-                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    font-family: var(--font-family-primary);
                     color: var(--card-text-secondary-color);
                 }
             
                 &__availability {
                     font-size: 16px;
                     font-weight: medium;
-                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    font-family: var(--font-family-primary);
                     color: var(--card-text-secondary-color);
                 }
             }
@@ -67,14 +71,14 @@
         
                 &__rating {
                     font-size: 25px;
-                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    font-family: var(--font-family-primary);
                     font-weight: medium;
                     color: var(--card-text-primary-color); 
                 }
 
                 &__price {
                     font-size: 25px;
-                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    font-family:var(--font-family-primary);
                     font-weight: medium;
                     color: var(--primary-color);
                 }
