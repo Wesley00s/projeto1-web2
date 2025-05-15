@@ -1,16 +1,16 @@
 .navbar {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   align-items: center;
-  padding: 1rem 1rem;
+  padding: 1rem;
   background-color: var(--secondary-color);
   color: var(--primary-color);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: var(--font-family-primary);
-  justify-content: space-between;
 
   &__logo {
-    padding-left: 12%;
+    padding-left: 40px;
     display: flex;
     align-items: center;
     flex-grow: 0;
@@ -38,13 +38,13 @@
     display: flex;
     align-items: center;
     margin-left: auto;
-    margin-right: 2rem;
+    margin-right: 1rem;
 
-      img {
+    img {
       object-fit: contain;
       margin: 15px 0;
       filter: brightness(0) invert(1);
-      }
+    }
   }
 
   &__button {
@@ -53,7 +53,7 @@
     justify-content: space-around;
     width: 120px;
     height: 50px;
-    padding: 1px 0px;
+    padding: 1px 0; 
     background-color: var(--primary-color);
     color: var(--text-color);
     border-radius: 8px;
@@ -83,35 +83,51 @@
     }
   }
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
 
-    &__logo {
-      margin-bottom: 0.5rem;
-    }
+  @media (max-width: 360px) {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px; 
+  padding: 0.8rem; 
 
-    &__title {
-      font-size: 24px;
-    }
-
-    &__links {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px;
-      width: 100%;
-      padding: 0;
-      margin-top: 1rem;
-    }
-
-    &__button-wrapper {
-      width: 100%;
-    }
-
-    &__button {
-      width: 100%;
-      justify-content: center;
-      margin-top: 1rem;
+  &__logo {
+    padding-left: 0;
+    margin-bottom: 0;
+    justify-content: center;
+    
+    img {
+      height: 40px; 
+      margin-right: 10px; 
     }
   }
+
+  &__title {
+    font-size: 16px; 
+    line-height: 1.2; 
+  }
+
+  &__links {
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px; 
+  }
+
+  &__button-login {
+    width: 100%;
+    justify-content: center;
+    margin: 8px 0; 
+    padding: 0 0.5rem; 
+  }
+
+  &__button {
+    width: 100%;
+    max-width: 200px; 
+    height: 40px; 
+    font-size: 16px; 
+    margin: 0 auto;
+  }
+}
 }

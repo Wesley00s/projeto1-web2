@@ -8,6 +8,8 @@
 .banner {
   width: 100%;
   display: flex;
+  position: relative;
+  overflow: hidden;
   background-color: var(--primary-color);
   background-size: cover;
   background-position: start;
@@ -21,9 +23,9 @@
     &__first-column {
       flex-direction: column;
       margin-top: 180px;
-      margin-left: 1.5%;
-      max-width: 45%;
-      max-height: 60%;
+      margin-left: 70px;
+      max-width: 750px;
+      max-height: 650px;
 
       &__title {
         padding-left: 10%;
@@ -36,7 +38,7 @@
         padding-left: 10%;
         margin-top: 20px;
         color: var(--text-color);
-        font-weight: medium;
+        font-weight: 500px;
         font-size: 27px;
       }
     }
@@ -126,14 +128,10 @@
     }
 }
 
-
 /*Margem para teste do footer*/
-
 .margin {
-  margin-top: 100px;
+  margin-top: 70px;
 }
-
-/*  Responsividade da página */
 
 @media (max-width: 1024px) {
   .banner__row {
@@ -203,30 +201,61 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 360px) {
   .banner {
-    height: auto;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
   }
 
-  .banner__row__first-column__title {
-    font-size: 28px;
+  .banner__row__first-column {
+    margin-top: 40px;
+    max-width: 95%;
+
+    &__title {
+      font-size: 22px;
+      line-height: 1.3;
+    }
+
+    &__text {
+      font-size: 16px;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
   }
 
-  .banner__row__first-column__text {
-    font-size: 18px;
+  .banner__row__second-column {
+    margin-top: 15px;
+
+    &__image {
+      width: 180px;
+      max-width: 90%;
+    }
   }
 
   .title-categories,
   .title-courses,
   .title-students {
-    font-size: 24px;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  .categories,
+  .courses,
+  .comments {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
   }
 
   .categories__show,
   .courses__card-courses,
   .comments__card-courses {
-    flex: 1 1 100%;
     padding: 0 10px;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .margin {
+    margin-top: 80px;
   }
 }
