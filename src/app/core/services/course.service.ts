@@ -87,7 +87,7 @@ export class CourseService {
             availability: "100% Online",
             rating: 4.9,
             price: true,
-            imageUrl: "assets/images/power-bi.png",
+            imageUrl: "assets/images/power-bi.jpg",
             showRecommended: true
           },
           {
@@ -111,7 +111,7 @@ export class CourseService {
             availability: "100% Online",
             rating: 4.9,
             price: true,
-            imageUrl: "https://www.hashtagtreinamentos.com/wp-content/uploads/2025/02/power-bi-ou-excel-3-1024x619.png",
+            imageUrl: "assets/images/excel.jpeg",
             showRecommended: false
           },
           {

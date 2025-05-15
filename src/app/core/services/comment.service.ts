@@ -26,7 +26,7 @@ export class CommentService {
             nameCourse : "Programação frontend web com Angular"
         },
         {
-            name : "Kaiane Maciel",
+            name : "Kaiane",
             imageUrl : "https://avatars.githubusercontent.com/u/132933423?v=4",
             description : "Achei o curso muito completo. Além da teoria bem explicada, " + 
                           "há muitos exercícios que simulam situações reais. Isso foi " +
