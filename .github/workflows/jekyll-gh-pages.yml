@@ -1,0 +1,54 @@
+name: Deploy Angular to GitHub Pages
+
+on:
+  push:
+    branches: ["master"]  # Ou "master" caso seja a branch padrão do seu repositório.
+  workflow_dispatch:  # Permite rodar o workflow manualmente.
+
+permissions:
+  contents: read  # Necessário para acessar os arquivos do repositório.
+  pages: write  # Necessário para fazer o deploy no GitHub Pages.
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Escolha a versão do Node.js necessária para sua aplicação.
+      
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Angular app
+        run: npm run build -- --prod  # Gera a build de produção na pasta "dist".
+
+      - name: Upload production build
+        uses: actions/upload-artifact@v3
+        with:
+          name: angular-dist
+          path: dist/  # O diretório onde a build do Angular é gerada.
+
+  deploy:
+    needs: build  # Só começa a execução após o job "build" ser concluído.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: angular-dist  # Nome do artefato que contém a build
+          branch: gh-pages  # A branch onde o GitHub Pages irá servir os arquivos.
