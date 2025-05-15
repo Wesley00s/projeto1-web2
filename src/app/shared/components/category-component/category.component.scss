@@ -1,50 +1,80 @@
 .category {
-    max-width: 450px;
-    height: 100%;
+    width: 260px; 
+    height: 250px; 
     margin-top: 30px;
     max-height: 500px;
     margin-left: 40px;
     min-width: 200px;
-    background-color: var(--secondary-color);
+    background-color: var(--card-backgroung-color);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.255);
+    font-family: var(--font-family-primary);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+
+    &:hover {
+        box-shadow: 0 10px 20px rgba(167, 2, 192, 0.532);
+    }
 
     &__details {
-        padding: 5px;
-        border-radius: 15px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
 
-        &__rectangle {
-            min-height: 150px;
+    &__rectangle {
+            height: 70%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #7d2cc0 100%);
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 15px;
-            border: 1px solid var(--card-text-secondary-color);
-            background-color: var(--card-text-secondary-color);
+            position: relative;
+            overflow: hidden;
             
-            &__image {
-                position: relative;
-        
-                img {
-                    object-fit: cover;
-                }
-            }  
-        }
-  
-        &__title {
-            text-align: center;  
-            font-size: 20px;
-            font-weight: bold;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: var(--card-text-primary-color);
-            word-wrap: break-word;  
-            word-break: break-word;  
-            white-space: normal; 
-        }
+            // Listra superior direita
+            &::before {
+                content: '';
+                position: absolute;
+                width: 150%;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.2);
+                transform: rotate(25deg);
+                top: -20px;
+                left: -50px;
+            }
 
-        &__title:hover {
+      &:hover::after {
+        opacity: 0.9;
+    }
+
+            &__image {
+                img {
+                    object-fit: contain;
+                    width: 80px;
+                    height: 80px;
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+    }
+
+    &__details__title {
+        margin-top: -30px;
+        min-height: 80px;
+        padding: 0 4px;
+        display: flex;
+        justify-content: center; 
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--card-text-primary-color);
+        box-sizing: border-box; 
+        transition: color 0.3s ease;
+
+        &:hover {
             color: var(--primary-color);
         }
     }

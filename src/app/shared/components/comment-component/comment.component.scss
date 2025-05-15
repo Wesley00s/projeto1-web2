@@ -1,18 +1,22 @@
 .comment {
-    max-width: 400px;
-    height: 100%;
+    width: 400px;
+    height: 300px;
     margin-top: 30px;
-    max-height: 500px;
     margin-left: 40px;
-    min-width: 100px;
+    display: flex;
+    flex-direction: column;
     background-color: var(--secondary-color);
     border: 1px solid var(--color-aux);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.234);
+    font-family: var(--font-family-primary);
+    padding: 20px;
+    
     &__details {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 5;
         padding: 5px;
         border-radius: 15px;
 
@@ -24,11 +28,11 @@
             &__image {
                 position: relative;
                 
-        
                 img {
                     width: 100px;
                     border-radius: 50px;
                     object-fit: cover;
+                    border: 3px solid var(--primary-color);
                 }
             } 
 
@@ -41,7 +45,7 @@
                 &__name {
                     margin-top: 20px;
                     font-size: 20px;
-                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    font-family: var(--font-family-primary);
                     font-weight: bold;
                     color: var(--primary-color);
                 } 
@@ -49,24 +53,32 @@
         }
   
         &__more {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; 
+            justify-content: space-between;
 
             &__comment {
-                text-align: center;  
+                text-align: justify;  
                 font-size: 16px;
-                font-weight: medium;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-weight: 500px;
+                font-family: var(--font-family-primary);
                 color: var(--card-text-primary-color);
                 word-wrap: break-word;  
                 word-break: break-word;  
                 white-space: normal; 
+                max-height: 150px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-bottom: 20px;
             }
 
             &__course {
                 padding-left: 20%;
-                margin-top: 30px;
+                margin-top: 10px;
                 font-size: 16px;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                font-weight: medium;
+                font-family: var(--font-family-primary);
+                font-weight: 500px;
                 color: var(--card-text-secondary-color);
             }
         }
