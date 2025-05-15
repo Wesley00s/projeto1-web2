@@ -2,7 +2,7 @@ name: Deploy Angular to GitHub Pages
 
 on:
   push:
-    branches: ["master"]  # Ou "master", dependendo da sua configuração.
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -23,7 +23,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Escolha a versão do Node.js necessária para sua aplicação.
+          node-version: '16'
       
       - name: Install dependencies
         run: npm install
@@ -32,10 +32,10 @@ jobs:
         run: npm run build -- --prod  # Gera a build de produção na pasta "dist".
 
       - name: Upload production build
-        uses: actions/upload-artifact@v2  # Usando a versão mais estável
+        uses: actions/upload-artifact@v3  # Versão atualizada
         with:
           name: angular-dist
-          path: dist/projeto1-web2/  # Caminho correto de acordo com o angular.json.
+          path: dist/projeto1-web2/  # Caminho correto da build
 
   deploy:
     needs: build  # O job deploy só começa após a conclusão do build.
@@ -51,4 +51,4 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           artifact_name: angular-dist
-          branch: gh-pages  # GitHub Pages será servido a partir dessa branch.
+          branch: gh-pages
