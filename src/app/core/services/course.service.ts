@@ -81,7 +81,7 @@ export class CourseService {
           {
             idCourse: 7,
             idCategory: 2,
-            title: "Aprenda inteligência de negócios com Microsoft Power BI",
+            title: "Aprenda Business Intelligence na prática com Power BI",
             description: "Domine a criação de dashboards interativos, análise visual de dados e integração com diversas fontes no Power BI. Torne-se capaz de transformar dados em decisões estratégicas com agilidade e clareza.",
             duration: 70,
             availability: "100% Online",
@@ -105,7 +105,7 @@ export class CourseService {
           {
             idCourse: 9,
             idCategory: 2,
-            title: "Aprenda inteligência de negócios com Excel e Storytelling",
+            title: "Aprenda Excel e Storytelling para negócios",
             description: "Combine o domínio do Excel e do Power BI com técnicas de storytelling de dados para criar relatórios que comunicam valor com clareza. Aprenda a conduzir narrativas que impactam decisões estratégicas.",
             duration: 70,
             availability: "100% Online",
@@ -141,7 +141,7 @@ export class CourseService {
           {
             idCourse: 12,
             idCategory: 3,
-            title: "Aprenda a criar jogos multijogador com JavaScript e Phaser",
+            title: "Aprenda Phaser e JavaScript para jogos multiplayer",
             description: "Construa jogos multiplayer dinâmicos com JavaScript e Phaser. Aprenda a sincronizar jogadores em tempo real, lidar com eventos de rede e criar experiências interativas para web.",
             duration: 70,
             availability: "100% Online",

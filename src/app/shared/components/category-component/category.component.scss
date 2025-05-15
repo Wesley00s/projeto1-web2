@@ -5,57 +5,74 @@
     max-height: 500px;
     margin-left: 40px;
     min-width: 200px;
-    background-color: var(--secondary-color);
+    background-color: var(--card-backgroung-color);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.255);
     font-family: var(--font-family-primary);
-    background-color: var(--card-backgroung-color);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+
+    &:hover {
+        box-shadow: 0 10px 20px rgba(167, 2, 192, 0.532);
+    }
 
     &__details {
-        padding: 5px;
+        flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        flex: 1;
 
-        &__rectangle {
-            min-height: 150px;
+&__rectangle {
+            height: 70%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #7d2cc0 100%);
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 15px;
-     
+            position: relative;
+            overflow: hidden;
+            
+            &::before {
+                content: '';
+                position: absolute;
+                width: 150%;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.2);
+                transform: rotate(25deg);
+                top: -20px;
+                left: -50px;
+            }
+
+      &:hover::after {
+        opacity: 0.9;
+    }
 
             &__image {
-                position: relative;
-        
                 img {
                     object-fit: contain;
                     width: 80px;
                     height: 80px;
+                    filter: brightness(0) invert(1);
                 }
-            }  
+            }
         }
-  
-        &__title {
-            margin-top: 10px;
-            text-align: center;
-            font-size: 18px;
-            font-weight: bold;
-            font-family: var(--font-family-primary);
-            color: var(--card-text-primary-color);
-            min-height: 48px; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 5px;
-            cursor: pointer;
+    }
 
-        }
+    &__details__title {
+        min-height: 80px;
+        padding: 0 5px;
+        display: flex;
+        justify-content: center; 
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--card-text-primary-color);
+        box-sizing: border-box; 
+        transition: color 0.3s ease;
 
-        &__title:hover {
+        &:hover {
             color: var(--primary-color);
         }
     }
