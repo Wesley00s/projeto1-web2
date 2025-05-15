@@ -1,11 +1,20 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family-primary);
+}
 
 .banner {
   width: 100%;
   display: flex;
+  position: relative;
+  overflow: hidden;
   background-color: var(--primary-color);
   background-size: cover;
   background-position: start;
   height: 700px;
+
 
   &__row {
     display: flex;
@@ -14,50 +23,43 @@
 
     &__first-column {
       flex-direction: column;
-      margin-top: 200px;
-      padding-left: 10%;
-      max-width: 50%;
-      max-height: 60%;
+      margin-top: 180px;
+      margin-left: 1.5%;
+      max-width: 780px;
+      max-height: 650px;
 
       &__title {
-        padding-left: 20%;
+        padding-left: 10%;
         color: var(--text-color);
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-weight: bold;
-        font-size: 45px;
+        font-size: 44px;
       }
 
-      &__text {
-        padding-left: 20%;
+      &__text { 
+        padding-left: 10%;
         margin-top: 20px;
         color: var(--text-color);
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-weight: medium;
-        font-size: 28px;
-      }
-
-      &__moon {
-        margin-top: 165px;
+        font-weight: 500px;
+        font-size: 27px;
       }
     }
 
     &__second-column {
       margin-top: 50px;
-      padding-left: 5.4%;
+      margin-left: 4.7%;
 
       &__image {
-        height: 120px;
-        width: 350px;
+        height: 100px;
+        width: 300px; 
       }
     }
   }
 }
 
 .title-categories {
-  margin-top: 30px;
+  margin-top: 50px;
   text-align: center;
   color: var(--primary-color);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
   font-size: 32px;
   margin-bottom: 20px;
@@ -82,7 +84,6 @@
   margin-top: 50px;
   text-align: center;
   color: var(--primary-color);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
   font-size: 32px;
   margin-bottom: 20px;
@@ -105,10 +106,9 @@
 
 
 .title-students {
-  margin-top: 40px;
+  margin-top: 60px;
   text-align: center;
   color: var(--primary-color);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
   font-size: 32px;
   margin-bottom: 20px;
@@ -121,17 +121,141 @@
   display: flex;
   flex-direction: row;
 
-  &__card-courses {
-    margin-top: 10px;
+    &__card-courses {
+      margin-top: 10px;
+      gap: 20px;
+      justify-content: center;
+      padding: 0 30px;
+    }
+}
+
+/*Margem para teste do footer*/
+.margin {
+  margin-top: 70px;
+}
+
+@media (max-width: 1024px) {
+  .banner__row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .banner__row__first-column {
+    margin-top: 80px;
+    margin-left: 0;
+    max-width: 90%;
+    align-items: center;
+
+    &__title,
+    &__text {
+      padding-left: 0;
+    }
+
+    &__title {
+      font-size: 36px;
+    }
+
+    &__text {
+      font-size: 22px;
+    }
+
+    &__moon {
+      margin-top: 50px;
+
+      img {
+        width: 80px;
+        height: auto;
+      }
+    }
+  }
+
+  .banner__row__second-column {
+    margin-top: 30px;
+    margin-left: 0;
+
+    &__image {
+      width: 240px;
+      height: auto;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .categories,
+  .courses,
+  .comments {
+    flex-wrap: wrap;
     gap: 20px;
+  }
+
+  .categories__show,
+  .courses__card-courses,
+  .comments__card-courses {
+    flex: 1 1 300px;
+    padding: 0 15px;
+    display: flex;
     justify-content: center;
-    padding: 0 30px;
   }
 }
 
+@media (max-width: 360px) {
+  .banner {
+    padding-bottom: 30px;
+  }
 
-/*Margem para teste do footer*/
+  .banner__row__first-column {
+    margin-top: 40px;
+    max-width: 95%;
 
-.margin {
-  margin-top: 100px;
+    &__title {
+      font-size: 22px;
+      line-height: 1.3;
+    }
+
+    &__text {
+      font-size: 16px;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+  }
+
+  .banner__row__second-column {
+    margin-top: 15px;
+
+    &__image {
+      width: 180px;
+      max-width: 90%;
+    }
+  }
+
+  .title-categories,
+  .title-courses,
+  .title-students {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  .categories,
+  .courses,
+  .comments {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .categories__show,
+  .courses__card-courses,
+  .comments__card-courses {
+    padding: 0 10px;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .margin {
+    margin-top: 80px;
+  }
 }
