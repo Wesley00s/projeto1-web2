@@ -2,8 +2,8 @@ name: Deploy Angular to GitHub Pages
 
 on:
   push:
-    branches: ["master"]  # Ou "master" caso seja a branch padrão do seu repositório.
-  workflow_dispatch:  # Permite rodar o workflow manualmente.
+    branches: ["main"]  # Ou "master", dependendo da sua configuração.
+  workflow_dispatch:
 
 permissions:
   contents: read  # Necessário para acessar os arquivos do repositório.
@@ -32,13 +32,13 @@ jobs:
         run: npm run build -- --prod  # Gera a build de produção na pasta "dist".
 
       - name: Upload production build
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2  # Usando a versão mais estável
         with:
           name: angular-dist
-          path: dist/  # O diretório onde a build do Angular é gerada.
+          path: dist/projeto1-web2/  # Caminho correto de acordo com o angular.json.
 
   deploy:
-    needs: build  # Só começa a execução após o job "build" ser concluído.
+    needs: build  # O job deploy só começa após a conclusão do build.
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -50,5 +50,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          artifact_name: angular-dist  # Nome do artefato que contém a build
-          branch: gh-pages  # A branch onde o GitHub Pages irá servir os arquivos.
+          artifact_name: angular-dist
+          branch: gh-pages  # GitHub Pages será servido a partir dessa branch.
