@@ -2,7 +2,7 @@ name: Deploy Angular to GitHub Pages
 
 on:
   push:
-    branches: ["main"]  # Ou "master", dependendo da sua configuração.
+    branches: ["master"]  # Ou "master", dependendo da sua configuração.
   workflow_dispatch:
 
 permissions:
