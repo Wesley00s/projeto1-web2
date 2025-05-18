@@ -1,16 +1,31 @@
 <nav class="navbar">
-    <div class="navbar__logo">
-        <img src = "assets/images/logo.png" alt="Logo">
-        <div class="navbar__title">
-            EduTech
-        </div>
-    </div>
+  <div class="navbar__logo">
+    <img src="assets/images/logo.png" alt="Logo" />
+    <div class="navbar__title">EduTech</div>
+  </div>
 
-    <div class="navbar__links">
-        <div class="navbar__button-login">
-            <a routerLink="/entrar" routerLinkActive="active" class="navbar__button">Entrar
-                <img src="assets/images/seta.png" alt="Seta" class="navbar__arrow">
-            </a>
-        </div>
+  <!-- Botão Hamburguer -->
+  <button class="navbar__hamburger" id="hamburger" (click)="toggleMenu()" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Links do menu -->
+  <div
+    class="navbar__links"
+    id="navbarLinks"
+    [class.active]="menuActive"
+  >
+    <a routerLink="/" routerLinkActive="active" class="navbar__link" (click)="closeMenu()">Início</a>
+    <a routerLink="/sobre" routerLinkActive="active" class="navbar__link" (click)="closeMenu()">Sobre</a>
+    <a routerLink="/cursos" routerLinkActive="active" class="navbar__link" (click)="closeMenu()">Cursos</a>
+
+    <div class="navbar__button-login">
+      <a routerLink="/entrar" routerLinkActive="active" class="navbar__button" (click)="closeMenu()">
+        Entrar
+        <img src="assets/images/seta.png" alt="Seta" class="navbar__arrow" />
+      </a>
     </div>
+  </div>
 </nav>
